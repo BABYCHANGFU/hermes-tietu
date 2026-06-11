@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>散步三悟 · 2026-06-11</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f7f3ec;
+    color: #1a1a1a;
+    line-height: 1.75;
+    padding: 24px 16px 60px;
+    min-height: 100vh;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  .hero {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 24px 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .hero .icon { font-size: 36px; margin-bottom: 8px; }
+  .hero h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hero .sub {
+    font-size: 12px;
+    color: #888;
+  }
+  /* 三大块 */
+  .block {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  .block-head {
+    padding: 18px 22px 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .block-head:active { background: #faf6f0; }
+  .block-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #b35a1a;
+    flex: 1;
+  }
+  .block-icon {
+    font-size: 22px;
+    margin-right: 10px;
+  }
+  .arrow {
+    font-size: 14px;
+    color: #b35a1a;
+    transition: transform 0.25s;
+  }
+  .block.open .arrow { transform: rotate(90deg); }
+  .block-body {
+    display: none;
+    padding: 0 22px 22px;
+    font-size: 15px;
+  }
+  .block.open .block-body { display: block; }
+
+  /* 思维导图节点 */
+  .node {
+    background: #faf8f5;
+    border-left: 3px solid #b35a1a;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+  .node-title {
+    font-weight: 700;
+    color: #8a5a2a;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .node-body {
+    color: #3a3a3a;
+    font-size: 14.5px;
+  }
+  .node-list {
+    margin: 4px 0 0 0;
+    padding-left: 18px;
+  }
+  .node-list li { margin-bottom: 3px; }
+
+  /* 高亮金句 */
+  .quote {
+    background: #fff3e0;
+    border-left: 3px solid #ff8c42;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #5a3a1a;
+    margin: 12px 0;
+  }
+
+  /* 例子区块 */
+  .example {
+    background: #f3eee5;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #444;
+  }
+  .example-label {
+    font-size: 12px;
+    color: #8a5a2a;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* 元主题 */
+  .meta-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .meta-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #b35a1a;
+    margin-bottom: 10px;
+    border-left: 3px solid #b35a1a;
+    padding-left: 10px;
+  }
+  .meta-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #2a2a2a;
+  }
+  .meta-body p { margin-bottom: 8px; }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 32px;
+  }
+  .footer a { color: #888; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="icon">🌳</div>
+    <h1>散步三悟</h1>
+    <div class="sub">2026-06-11 · 楼下散步想到的三个东西</div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-title">🔗 三个东西讲的是同一件事</div>
+    <div class="meta-body">
+      <p>看起来是三件不相关的事——结构、对话、能力——其实都指向同一个问题：<strong>在 AI 时代怎么让人真活着</strong>。</p>
+      <p><strong>结构</strong>告诉你位置（在哪一层）；<strong>对话</strong>告诉你介质（怎么把脑内逼出来）；<strong>能力</strong>告诉你内核（什么是真的强）。</p>
+      <p>一个对外（怎么做事），一个对内（怎么想事），一个对己（怎么定位自己）。</p>
+    </div>
+  </div>
+
+  <!-- Block 1: 三 -->
+  <div class="block open">
+    <div class="block-head" onclick="this.parentElement.classList.toggle('open')">
+      <span class="block-title"><span class="block-icon">📐</span>一、三层结构对称</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="block-body">
+      <div class="quote">认不清自己卡在哪一层，所有努力都是打转。</div>
+
+      <div class="node">
+        <div class="node-title">供给端（递进，从内到外）</div>
+        <div class="node-body">
+          <ol class="node-list">
+            <li>脑袋里要有货</li>
+            <li>写下来才能变清晰</li>
+            <li>整理后发出去（任何形式）</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="node">
+        <div class="node-title">需求端（漏斗，从宽到窄）</div>
+        <div class="node-body">
+          <ol class="node-list">
+            <li>筛选（建群拉人）</li>
+            <li>引流（试听/免费）</li>
+            <li>产品交付（课件/服务）</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="node">
+        <div class="node-title">中介端（OODA 循环，目标稳）</div>
+        <div class="node-body">
+          <ol class="node-list">
+            <li>目标（钉死）</li>
+            <li>观察</li>
+            <li>执行（OB 来回转）</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">三层是同一个形状</div>
+        供给 = 递进　·　需求 = 漏斗　·　中介 = 循环<br>
+        规律相通。认卡在哪一层，所有努力都是打转。
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 2: 对话 -->
+  <div class="block">
+    <div class="block-head" onclick="this.parentElement.classList.toggle('open')">
+      <span class="block-title"><span class="block-icon">💬</span>二、对话让你活起来</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="block-body">
+      <div class="quote">躺着想为什么不行？因为只有第一层，没有第二层——对话做介质。</div>
+
+      <div class="node">
+        <div class="node-title">对话的三个感受</div>
+        <div class="node-body">
+          <ol class="node-list">
+            <li><strong>清爽</strong> — 说出来，脑子就清了一层</li>
+            <li><strong>灵感</strong> — 说着说着就连接出新东西</li>
+            <li><strong>知道做不做什么</strong> — 落地的判断</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="node">
+        <div class="node-title">对话的三层</div>
+        <div class="node-body">
+          <table style="width:100%; font-size:14px; border-collapse: collapse;">
+            <tr style="background:#faf6f0;">
+              <td style="padding:6px 8px; font-weight:700; width:60px;">第一层</td>
+              <td style="padding:6px 8px;">思考 / 躺着想</td>
+              <td style="padding:6px 8px; color:#888;">太单薄，会飘</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; font-weight:700; color:#b35a1a;">第二层</td>
+              <td style="padding:6px 8px;">写下来 / 说出来</td>
+              <td style="padding:6px 8px; color:#b35a1a;"><strong>落点，让人感受到自己活着</strong></td>
+            </tr>
+            <tr style="background:#faf6f0;">
+              <td style="padding:6px 8px; font-weight:700;">第三层</td>
+              <td style="padding:6px 8px;">整理后输出</td>
+              <td style="padding:6px 8px; color:#888;">连接活化，说着说着就出来</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">为什么「想」不顶用</div>
+        想到的就飘走了，没有落点。写下来是落点，说出来是落点，对话是落点。
+        <strong>不经过第二层，第一层和第三层中间是断的。</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 3: 能力 -->
+  <div class="block">
+    <div class="block-head" onclick="this.parentElement.classList.toggle('open')">
+      <span class="block-title"><span class="block-icon">🎹</span>三、真能力是编排与合作</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="block-body">
+      <div class="quote">不是展现出来牛的就是好。炫技的东西不一定是好的。</div>
+
+      <div class="node">
+        <div class="node-title">键盘手例子：C 调 vs 12 调</div>
+        <div class="node-body">
+          <ul class="node-list">
+            <li>12 调覆盖广、闭眼弹，<em>看着牛</em></li>
+            <li>C 调只攻一个调，但<strong>和弦、乐理、对音乐的理解都打磨透了</strong></li>
+            <li>12 调不一定羡慕 C 调——他只从黑白键覆盖度衡量</li>
+            <li>真正内核：<strong>编排和合作</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="node">
+        <div class="node-title">面试例子：不要用覆盖度否定编排</div>
+        <div class="node-body">
+          C 调歌手要让面试官录用，不强调自己音域窄——反过来问对方不足。比如面试官说中低音弱、喜欢高音全音域，那 C 调歌手的中低音有气息、有编排，<strong>这本身就是强</strong>。
+        </div>
+      </div>
+
+      <div class="node">
+        <div class="node-title">核心原则</div>
+        <div class="node-body">
+          <ul class="node-list">
+            <li><strong>真能力</strong> = 单点编排深度 + 场景化合作</li>
+            <li><strong>假能力</strong> = 覆盖广度 + 身份符号</li>
+            <li>打压能力的人，本质是用身份否定深度</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-title">📝 出文章方向（待你拍板）</div>
+    <div class="meta-body">
+      <p><strong>选项 A：合一篇（推荐）</strong><br>主题：<strong>《让人活起来的三个东西》</strong><br>或：<strong>《AI 时代，真本事长什么样》</strong><br>三层递进：结构（找位置）→ 对话（找介质）→ 能力（找内核）</p>
+      <p><strong>选项 B：拆三篇</strong><br>每条原则单独成文，深度展开。但流量分散。</p>
+      <p><strong>选项 C：先合一篇，再拆三篇</strong><br>先用合篇测读者反应，哪条最有共鸣再单独拆。</p>
+      <p><strong>你倾向哪个？我先不动手，等你拍板。</strong></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    赫妹 · 2026-06-11 整理 · 来源：福总楼下散步<br>
+    <a href="https://BABYCHANGFU.github.io/hermes-tietu/">返回主页</a>
+  </div>
+
+</div>
+
+<script>
+  // 初始化：第一块默认展开
+  document.querySelectorAll('.block').forEach((b, i) => {
+    if (i === 0) b.classList.add('open');
+  });
+</script>
+</body>
+</html>
